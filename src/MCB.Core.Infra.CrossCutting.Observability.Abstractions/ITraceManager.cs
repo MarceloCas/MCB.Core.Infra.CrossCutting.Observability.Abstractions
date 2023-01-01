@@ -30,7 +30,7 @@ public interface ITraceManager
         TInput input,
         Action<TInput, Activity> handler
     );
-    void StartActivity<TInput, TOutput>(
+    TOutput StartActivity<TInput, TOutput>(
         string name,
         ActivityKind kind,
         Guid correlationId,
@@ -62,7 +62,7 @@ public interface ITraceManager
         Func<TInput, Activity, CancellationToken, Task> handler,
         CancellationToken cancellationToken
     );
-    Task StartActivityAsync<TInput, TOutput>(
+    Task<TOutput> StartActivityAsync<TInput, TOutput>(
         string name,
         ActivityKind kind,
         Guid correlationId,
