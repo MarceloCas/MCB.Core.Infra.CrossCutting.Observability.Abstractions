@@ -27,6 +27,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
+        TInput input,
         Action<TInput, Activity> handler
     );
     void StartActivity<TInput, TOutput>(
@@ -36,6 +37,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
+        TInput input,
         Func<TInput, Activity, TOutput> handler
     );
 
@@ -56,6 +58,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
+        TInput input,
         Func<TInput, Activity, CancellationToken, Task> handler,
         CancellationToken cancellationToken
     );
@@ -66,6 +69,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
+        TInput input,
         Func<TInput, Activity, CancellationToken, Task<TOutput>> handler,
         CancellationToken cancellationToken
     );
