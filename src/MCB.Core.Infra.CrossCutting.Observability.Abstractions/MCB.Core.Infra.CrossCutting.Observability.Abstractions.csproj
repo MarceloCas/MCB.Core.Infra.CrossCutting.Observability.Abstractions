@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>Marcelo Castelo Branco</Authors>
+		<Company>MCB</Company>
+		<PackageProjectUrl>https://github.com/MarceloCas/MCB.Core.Infra.CrossCutting.Observability.Abstractions</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/MarceloCas/MCB.Core.Infra.CrossCutting.Observability.Abstractions</RepositoryUrl>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+</Project>
