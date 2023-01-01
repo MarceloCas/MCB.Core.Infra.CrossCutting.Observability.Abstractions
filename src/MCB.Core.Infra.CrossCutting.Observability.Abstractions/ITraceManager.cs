@@ -16,8 +16,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
-        Action<Activity> handler,
-        CancellationToken cancellationToken
+        Action<Activity> handler
     );
     void StartActivity<TInput>(
         string name,
@@ -25,8 +24,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
-        Action<TInput, Activity> handler,
-        CancellationToken cancellationToken
+        Action<TInput, Activity> handler
     );
     void StartActivity<TInput, TOutput>(
         string name,
@@ -34,8 +32,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
-        Func<TInput, Activity, TOutput> handler,
-        CancellationToken cancellationToken
+        Func<TInput, Activity, TOutput> handler
     );
 
     Task StartActivityAsync(
@@ -44,7 +41,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
-        Func<Activity, Task> handler,
+        Func<Activity, CancellationToken, Task> handler,
         CancellationToken cancellationToken
     );
     Task StartActivityAsync<TInput>(
@@ -53,7 +50,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
-        Func<TInput, Activity, Task> handler,
+        Func<TInput, Activity, CancellationToken, Task> handler,
         CancellationToken cancellationToken
     );
     Task StartActivityAsync<TInput, TOutput>(
@@ -62,7 +59,7 @@ public interface ITraceManager
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
-        Func<TInput, Activity, Task<TOutput>> handler,
+        Func<TInput, Activity, CancellationToken, Task<TOutput>> handler,
         CancellationToken cancellationToken
     );
 }
