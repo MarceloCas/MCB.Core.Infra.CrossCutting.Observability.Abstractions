@@ -16,8 +16,8 @@ public interface ITraceManager
         ActivityKind kind,
         Guid correlationId,
         Guid tenantId,
-        string executionUser,
-        string sourcePlatform,
+        string? executionUser,
+        string? sourcePlatform,
         Action<Activity> handler
     );
     void StartActivity<TInput>(
@@ -25,8 +25,8 @@ public interface ITraceManager
         ActivityKind kind,
         Guid correlationId,
         Guid tenantId,
-        string executionUser,
-        string sourcePlatform,
+        string? executionUser,
+        string? sourcePlatform,
         TInput? input,
         Action<TInput?, Activity> handler
     );
@@ -35,8 +35,8 @@ public interface ITraceManager
         ActivityKind kind,
         Guid correlationId,
         Guid tenantId,
-        string executionUser,
-        string sourcePlatform,
+        string? executionUser,
+        string? sourcePlatform,
         TInput? input,
         Func<TInput?, Activity, TOutput?> handler
     );
@@ -46,8 +46,8 @@ public interface ITraceManager
         ActivityKind kind,
         Guid correlationId,
         Guid tenantId,
-        string executionUser,
-        string sourcePlatform,
+        string? executionUser,
+        string? sourcePlatform,
         Func<Activity, CancellationToken, Task> handler,
         CancellationToken cancellationToken
     );
@@ -56,8 +56,8 @@ public interface ITraceManager
         ActivityKind kind,
         Guid correlationId,
         Guid tenantId,
-        string executionUser,
-        string sourcePlatform,
+        string? executionUser,
+        string? sourcePlatform,
         TInput? input,
         Func<TInput?, Activity, CancellationToken, Task> handler,
         CancellationToken cancellationToken
@@ -67,8 +67,8 @@ public interface ITraceManager
         ActivityKind kind,
         Guid correlationId,
         Guid tenantId,
-        string executionUser,
-        string sourcePlatform,
+        string? executionUser,
+        string? sourcePlatform,
         TInput? input,
         Func<TInput?, Activity, CancellationToken, Task<TOutput?>> handler,
         CancellationToken cancellationToken
