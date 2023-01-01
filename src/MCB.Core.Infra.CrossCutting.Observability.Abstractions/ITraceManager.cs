@@ -5,6 +5,7 @@ namespace MCB.Core.Infra.CrossCutting.Observability.Abstractions;
 public interface ITraceManager
 {
     // Constants
+    public const string CORRELATION_ID_TAG_NAME = "correlationId";
     public const string TENANT_ID_TAG_NAME = "tenantId";
     public const string EXECUTION_USER_TAG_NAME = "executionUser";
     public const string SOURCE_PLATFORM_TAG_NAME = "sourcePlatform";
@@ -13,6 +14,7 @@ public interface ITraceManager
     void StartActivity(
         string name,
         ActivityKind kind,
+        Guid correlationId,
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
@@ -21,6 +23,7 @@ public interface ITraceManager
     void StartActivity<TInput>(
         string name,
         ActivityKind kind,
+        Guid correlationId,
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
@@ -29,6 +32,7 @@ public interface ITraceManager
     void StartActivity<TInput, TOutput>(
         string name,
         ActivityKind kind,
+        Guid correlationId,
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
@@ -38,6 +42,7 @@ public interface ITraceManager
     Task StartActivityAsync(
         string name,
         ActivityKind kind,
+        Guid correlationId,
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
@@ -47,6 +52,7 @@ public interface ITraceManager
     Task StartActivityAsync<TInput>(
         string name,
         ActivityKind kind,
+        Guid correlationId,
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
@@ -56,6 +62,7 @@ public interface ITraceManager
     Task StartActivityAsync<TInput, TOutput>(
         string name,
         ActivityKind kind,
+        Guid correlationId,
         Guid tenantId,
         string executionUser,
         string sourcePlatform,
