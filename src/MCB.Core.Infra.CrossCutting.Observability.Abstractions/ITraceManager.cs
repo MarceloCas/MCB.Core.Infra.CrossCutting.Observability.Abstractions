@@ -4,6 +4,12 @@ namespace MCB.Core.Infra.CrossCutting.Observability.Abstractions;
 
 public interface ITraceManager
 {
+    // Constants
+    public const string TENANT_ID_TAG_NAME = "tenantId";
+    public const string EXECUTION_USER_TAG_NAME = "executionUser";
+    public const string SOURCE_PLATFORM_TAG_NAME = "sourcePlatform";
+
+    // Methods
     void StartActivity(
         string name,
         ActivityKind kind,
